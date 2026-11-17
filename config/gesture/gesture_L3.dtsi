@@ -1,0 +1,29 @@
+/ {
+    macros {
+        alt_tab_press: alt_tab_press {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>;
+        };
+        alt_shift_tab_press: alt_shift_tab_press {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp LS(TAB)>;
+        };
+    };
+
+    zip_mouse_gesture_l3: zip_mouse_gesture_l3 {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        enable-eager-mode;
+        stroke-size = <150>;
+        movement-threshold = <20>;
+        idle-timeout-ms = <250>;
+        gesture-cooldown-ms = <150>;
+
+        vdesk_prev { pattern = <GESTURE_LEFT>;  bindings = <&alt_shift_tab_press>; };
+        vdesk_next { pattern = <GESTURE_RIGHT>; bindings = <&alt_tab_press>; };
+        win_max    { pattern = <GESTURE_UP>;    bindings = <&kp LG(UP_ARROW)>; };
+        win_min    { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(DOWN_ARROW)>; };
+    };
+};
