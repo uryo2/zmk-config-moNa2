@@ -1,0 +1,12 @@
+&zip_mouse_gesture {
+    enable-eager-mode;
+    stroke-size = <150>;
+    movement-threshold = <20>;
+    idle-timeout-ms = <250>;
+    gesture-cooldown-ms = <150>;
+
+        taskbar_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(PG_UP)>; };
+        taskbar_next { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(PG_DN)>; };
+    new_tab   { pattern = <GESTURE_UP>;    bindings = <&kp LC(T)>; };        // 新規タブ
+    close_tab { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(W)>; };        // タブを閉じる
+};

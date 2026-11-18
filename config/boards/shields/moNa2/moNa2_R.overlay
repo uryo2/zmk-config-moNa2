@@ -1,4 +1,9 @@
 #include "moNa2.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/battery_history_request.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -14,12 +19,10 @@
             ;
 };
 
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-
-    };
+// 既存のtrackball_listenerを有効化してジェスチャープロセッサーを接続
+&trackball_listener {
+    status = "okay";
+    input-processors = <&zip_xy_scaler 1 1>, <&pointer_accel>, <&mouse_runtime_input_processor>;
 };
 
 &pinctrl {
@@ -41,6 +44,8 @@
     };
 };
 
+&xiao_serial { status = "disabled"; };
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -55,10 +60,5 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <5>;
-        scroll-layers = <6>;
-
     };
 };
-
-
