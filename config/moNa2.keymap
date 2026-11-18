@@ -38,6 +38,7 @@
 #include "gesture/gesture_L2.dtsi"
 #include "gesture/gesture_L3.dtsi"
 #include "gesture/gesture_L7.dtsi"
+#include <behaviors/runtime-sensor-rotate.dtsi>
 
 #define ZMK_POINTING
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
@@ -545,7 +546,7 @@
 &mo 11                         &kp LEFT_COMMAND          &kp LEFT_ALT  &lt 9 GRAVE  &mt LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN    &kp BACKSPACE  &lt 8 ENTER                                            &mo 7
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         layer_1_placeholder {
@@ -587,7 +588,7 @@
 &mo 11                        &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 GRAVE         &mt_exit_AML_on_tap LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN  &kp BACKSPACE  &lt 8 ENTER                                                                                        &mo 7
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         SCROLL {
@@ -602,7 +603,7 @@
         BT {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans            &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &trans        &trans        &trans        &trans            &trans       &trans        &trans        &trans        &trans        &studio_unlock
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans    &trans       &trans                                                  &bt BT_CLR_ALL
             >;
@@ -652,7 +653,7 @@
 &trans   &trans  &trans  &trans  &trans  &trans          &trans        &trans                                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
     };
 };

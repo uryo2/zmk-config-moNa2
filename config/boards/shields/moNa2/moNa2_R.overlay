@@ -1,4 +1,9 @@
 #include "moNa2.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/battery_history_request.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -17,7 +22,7 @@
 // 既存のtrackball_listenerを有効化してジェスチャープロセッサーを接続
 &trackball_listener {
     status = "okay";
-    input-processors = <&zip_xy_scaler 1 1>, <&pointer_accel>;
+    input-processors = <&zip_xy_scaler 1 1>, <&pointer_accel>, <&mouse_runtime_input_processor>;
 };
 
 &pinctrl {
