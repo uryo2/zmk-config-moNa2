@@ -567,7 +567,7 @@
 &mo 11                         &kp LEFT_COMMAND          &kp LEFT_ALT  &lt 9 GRAVE  &mt LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN    &kp BACKSPACE  &lt 8 ENTER                                            &mo 7
             >;
 
-            sensor-bindings = <&rsr_scroll &rsr_trans>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         layer_1_placeholder {
@@ -609,7 +609,7 @@
 &mo 11                        &kp LEFT_COMMAND             &kp LEFT_ALT                 &lt_exit_AML 9 GRAVE         &mt_exit_AML_on_tap LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN  &kp BACKSPACE  &lt 8 ENTER                                                                                        &mo 7
             >;
 
-            sensor-bindings = <&rsr_scroll &rsr_trans>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         SCROLL {
@@ -655,6 +655,8 @@
 &trans   &kp LG(LS(LEFT))  &kp LA(DOWN_ARROW)  &kp LG(LS(RIGHT))  &trans                 &trans    &mt JP_AT PERIOD  &mtzeropoint 0 KP_N0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp JP_EQUAL
 &trans   &trans            &trans              &mo 9              &mo 10                 &mo 11    &trans            &trans                                                                    &trans
             >;
+
+            sensor-bindings = <&rsr_scroll &rsr_trans>;
         };
 
         layer_10 {
