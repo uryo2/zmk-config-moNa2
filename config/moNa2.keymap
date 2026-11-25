@@ -564,6 +564,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            display-name = "Default";
             bindings = <
 &mt ESCAPE Q                   &kp W                     &kp E         &kp R        &kp T                                                                &kp Y        &kp U  &kp I             &kp O            &mt JP_MINUS P
 &hold_pref_shift LEFT_SHIFT A  &hold_pref_shift LC(S) S  &kp D         &lt 7 F      &kp G                                                 &kp F5         &kp H        &kp J  &kp K             &lt 5 L          &lt 1 JP_COLON
@@ -575,6 +576,7 @@
         };
 
         layer_1_placeholder {
+            display-name = "Layer 1";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
@@ -586,6 +588,7 @@
         // Layer 2: 数字テンキー（Layer 10の後継が使用中のため透明化）
 
         layer_2_placeholder {
+            display-name = "Layer 2";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
@@ -597,6 +600,7 @@
         // Layer 3: 矢印+数字（Layer 9の後継が使用中のため透明化）
 
         layer_3_placeholder {
+            display-name = "Layer 3";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
@@ -606,6 +610,7 @@
         };
 
         MOUSE {
+            display-name = "MOUSE";
             bindings = <
 &mt_exit_AML_on_tap ESCAPE Q  &kp_exit_AML W               &kp_exit_AML E               &kp_exit_AML R               &kp_exit_AML T                                                                                &kp_exit_AML Y  &kp_exit_AML U  &kp_exit_AML I                    &kp_exit_AML O                   &mt_exit_AML_on_tap JP_MINUS P
 &mt_exit_AML_on_tap LSHIFT A  &kp_exit_AML S               &kp_exit_AML D               &kp F                        &kp_exit_AML G                                                                 &trans         &kp_exit_AML H  &mkp MB1        &kp_exit_AML K                    &lt 5 L                          &lt 1 JP_COLON
@@ -617,6 +622,7 @@
         };
 
         SCROLL {
+            display-name = "SCROLL";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans  &trans            &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &trans  &mkp MB1  &trans  &kp LEFT_CONTROL  &kp LEFT_CONTROL
@@ -626,6 +632,7 @@
         };
 
         BT {
+            display-name = "BT";
             bindings = <
 &trans  &trans        &trans        &trans        &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans            &trans       &trans        &trans        &trans        &trans        &studio_unlock
@@ -635,6 +642,7 @@
         };
 
         lowdpi {
+            display-name = "lowdpi";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                        &trans         &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans            &trans      &trans         &trans  &trans  &trans  &trans
@@ -644,6 +652,7 @@
         };
 
         ARROW_symbolsBU {
+            display-name = "ARROW_SYM";
             bindings = <
 &kp TAB  &kp LC(LS(TAB))                &mt LC(UP_ARROW) UP_ARROW      &kp LC(TAB)                      &mt LS(RC(HOME)) HOME                         &kp JP_CARET  &kp JP_AMPRS                   &mt LC(UP_ARROW) UP_ARROW      &kp JP_RBRC                      &kp JP_HASH
 &trans   &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &mt LS(RC(END)) END              &kp JP_BSLH  &kp JP_DLLR   &mt LC(LEFT_ARROW) LEFT_ARROW  &mt LC(DOWN_ARROW) DOWN_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp QUESTION
@@ -653,6 +662,7 @@
         };
 
         layer_9 {
+            display-name = "ARROW_NUM";
             bindings = <
 &kp TAB  &kp LC(LS(TAB))   &td_up              &kp LC(TAB)        &mt LS(RC(HOME)) HOME                              &mt JP_PRCNT KP_SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt JP_UNDER JP_MINUS
 &trans   &td_left          &td_down            &td_right          &mt LS(RC(END)) END              &kp KP_NUMLOCK    &mt JP_BSLH JP_ASTER   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt JP_AMPRS JP_PLUS
@@ -664,6 +674,7 @@
         };
 
         layer_10 {
+            display-name = "NUM";
             bindings = <
 &mt JP_PRCNT KP_SLASH       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt JP_UNDER JP_MINUS                                  &mt JP_PRCNT KP_SLASH       &kp KP_N7        &kp KP_N8  &kp KP_N9  &mt JP_UNDER JP_MINUS
 &mt JP_ASTER JP_ASTER       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt JP_AMPRS JP_PLUS                 &kp KP_NUMLOCK    &mt JP_BSLH JP_ASTER        &kp KP_NUMBER_4  &kp KP_N5  &kp KP_N6  &mt JP_AMPRS JP_PLUS
@@ -673,6 +684,7 @@
         };
 
         FUNCTION {
+            display-name = "FUNCTION";
             bindings = <
 &kp F12  &kp F7  &kp F8  &kp F9  &trans                                &kp JP_CARET  &kp JP_AMPRS  &kp JP_LBRC  &kp JP_RBRC  &kp JP_HASH
 &kp F11  &kp F4  &kp F5  &kp F6  &trans                  &kp JP_BSLH   &kp JP_DLLR   &kp JP_AT     &kp JP_LPAR  &kp JP_RPAR  &kp QUESTION
