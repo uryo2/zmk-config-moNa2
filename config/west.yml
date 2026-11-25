@@ -46,6 +46,12 @@ manifest:
     - name: zmk-feature-runtime-tapdance
       remote: cormoran
       revision: main
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: codex/custom-rpc-rewrite
     - name: zmk-behavior-battery-typer
       remote: eintim
       revision: 0825cab277cec85830d93c1a3db102caa66bb825
