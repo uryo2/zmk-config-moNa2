@@ -31,6 +31,10 @@
 #define JP_BSLH   (INTERNATIONAL_1)
 #define JP_UNDER  (LS(INTERNATIONAL_1))
 
+#define ZMK_POINTING
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 700
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -42,9 +46,6 @@
 #include <behaviors/runtime_macro.dtsi>
 #include <behaviors/runtime_tapdance.dtsi>
 
-#define ZMK_POINTING
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 700
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 40
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -293,7 +294,7 @@
         rsr_scroll: rsr_scroll {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
-            tap-ms = <20>;
+            tap-ms = <25>;
             cw-binding = <&msc SCRL_DOWN>;
             ccw-binding = <&msc SCRL_UP>;
         };
