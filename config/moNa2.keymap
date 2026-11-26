@@ -167,6 +167,8 @@
         exclmtn {
             bindings = <&kp JP_EXCL>;
             key-positions = <31 30>;
+            timeout-ms = <75>;
+            slow-release;
         };
 
         mb2 {
@@ -701,9 +703,9 @@
     input-type = <2>;
     track-remainders;
     min-factor = <300>;
-    max-factor = <2800>;
-    speed-threshold = <450>;
-    speed-max = <3000>;
+    max-factor = <3100>;
+    speed-threshold = <420>;
+    speed-max = <2200>;
     acceleration-exponent = <2>;
 };
 
