@@ -90,108 +90,6 @@
         };
     };
 
-    runtime_combo_defaults {
-        compatible = "cormoran,runtime-combo-defaults";
-
-        dya_alt_gui_k {
-            slot = <0>;
-            display-name = "Alt+Win+K";
-            bindings = <&kp LA(LG(K))>;
-            key-positions = <26 38>;
-        };
-
-        dya_excl_qmark {
-            slot = <1>;
-            display-name = "! / ?";
-            bindings = <&mt JP_EXCL QUESTION>;
-            key-positions = <31 32>;
-            slow-release;
-        };
-
-        exclmtn {
-            slot = <2>;
-            display-name = "Exclamation";
-            bindings = <&kp JP_EXCL>;
-            key-positions = <30 31>;
-            timeout-ms = <75>;
-            slow-release;
-        };
-
-        colon {
-            slot = <3>;
-            display-name = "Colon";
-            bindings = <&kp JP_COLON>;
-            key-positions = <29 30>;
-        };
-
-        mb4 {
-            slot = <4>;
-            display-name = "MB4";
-            bindings = <&mkp MB4>;
-            key-positions = <29 30>;
-            layers = <4>;
-        };
-
-        zero1 {
-            slot = <5>;
-            display-name = "KP 0 (row2)";
-            bindings = <&kp KP_NUMBER_0>;
-            key-positions = <29 30 31>;
-            layers = <9 10>;
-        };
-
-        minimum {
-            slot = <6>;
-            display-name = "Win Minimize";
-            bindings = <&kp LG(DOWN)>;
-            key-positions = <29 30 31>;
-        };
-
-        closewin {
-            slot = <7>;
-            display-name = "Close Win";
-            bindings = <&kp LA(F4)>;
-            key-positions = <29 30 31 40>;
-        };
-
-        mb5 {
-            slot = <8>;
-            display-name = "MB5";
-            bindings = <&mkp MB5>;
-            key-positions = <6 7>;
-            layers = <4>;
-        };
-
-        zero3 {
-            slot = <9>;
-            display-name = "KP 0 (row0)";
-            bindings = <&kp KP_NUMBER_0>;
-            key-positions = <6 7 8>;
-            layers = <9 10>;
-        };
-
-        max {
-            slot = <10>;
-            display-name = "Win Maximize";
-            bindings = <&kp LG(UP_ARROW)>;
-            key-positions = <6 7 8>;
-        };
-
-        reload {
-            slot = <11>;
-            display-name = "Reload 1";
-            bindings = <&kp F5>;
-            key-positions = <6 7 8 40>;
-        };
-
-        bootloader {
-            slot = <12>;
-            display-name = "Bootloader";
-            bindings = <&bootloader>;
-            key-positions = <26 27>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -205,9 +103,27 @@
             key-positions = <19 20>;
         };
 
+        zero1 {
+            bindings = <&kp KP_NUMBER_0>;
+            key-positions = <29 30 31>;
+            layers = <9 10>;
+        };
+
         mb3 {
             bindings = <&mkp MB3>;
             key-positions = <17 18 19>;
+            layers = <4>;
+        };
+
+        mb5 {
+            bindings = <&mkp MB5>;
+            key-positions = <6 7>;
+            layers = <4>;
+        };
+
+        mb4 {
+            bindings = <&mkp MB4>;
+            key-positions = <29 30>;
             layers = <4>;
         };
 
@@ -217,9 +133,44 @@
             layers = <9 10>;
         };
 
+        zero3 {
+            bindings = <&kp KP_NUMBER_0>;
+            key-positions = <6 7 8>;
+            layers = <9 10>;
+        };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <26 27>;
+        };
+
         ctrlAltTAB {
             bindings = <&kp LA(LC(TAB))>;
             key-positions = <17 18 19 20>;
+        };
+
+        max {
+            bindings = <&kp LG(UP_ARROW)>;
+            key-positions = <6 7 8>;
+            layers = <4>;
+        };
+
+        minimum {
+            bindings = <&kp LG(DOWN)>;
+            key-positions = <29 30 31>;
+            layers = <4>;
+        };
+
+        colon {
+            bindings = <&kp JP_COLON>;
+            key-positions = <29 30>;
+        };
+
+        exclmtn {
+            bindings = <&kp JP_EXCL>;
+            key-positions = <30 31>;
+            timeout-ms = <75>;
+            slow-release;
         };
 
         mb2 {
@@ -233,9 +184,31 @@
             key-positions = <18 19>;
         };
 
+        closewin {
+            bindings = <&kp LA(F4)>;
+            key-positions = <29 30 31 40>;
+            layers = <4>;
+        };
+
+        reload {
+            bindings = <&kp F5>;
+            key-positions = <6 7 8 40>;
+        };
+
         reload2 {
             bindings = <&kp F5>;
             key-positions = <17 18 19 40>;
+        };
+
+        dya_alt_gui_k {
+            bindings = <&kp LA(LG(K))>;
+            key-positions = <26 38>;
+        };
+
+        dya_excl_qmark {
+            bindings = <&mt JP_EXCL QUESTION>;
+            key-positions = <31 32>;
+            slow-release;
         };
     };
 
