@@ -12,7 +12,7 @@ extern "C" {
 // - sub-us time is rounded to us, due to the limitation of k_busy_wait, see :
 // https://github.com/zephyrproject-rtos/zephyr/issues/6498
 #define T_NCS_SCLK 1     /* 120 ns (rounded to 1us) */
-#define T_SCLK_NCS_WR 10 /* 10 us */
+#define T_SCLK_NCS_WR 20 /* 20 us (datasheet min) */
 #define T_SRAD 4         /* 4 us */
 #define T_SRAD_MOTBR 4   /* same as T_SRAD */
 #define T_SRX 1          /* 250 ns (rounded to 1 us) */

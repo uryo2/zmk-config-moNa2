@@ -54,6 +54,7 @@ struct pixart_data {
     bool sw_smart_flag;
 
     int64_t last_remainder_time;
+    uint8_t error_count;
 };
 
 // device config data structure

@@ -102,6 +102,7 @@ static int reg_read(const struct device *dev, uint8_t reg, uint8_t *buf) {
     err = spi_write_dt(&config->bus, &tx);
     if (err) {
         LOG_ERR("Reg read failed on SPI write");
+        spi_cs_ctrl(dev, false);
         return err;
     }
 
@@ -120,6 +121,7 @@ static int reg_read(const struct device *dev, uint8_t reg, uint8_t *buf) {
     err = spi_read_dt(&config->bus, &rx);
     if (err) {
         LOG_ERR("Reg read failed on SPI read");
+        spi_cs_ctrl(dev, false);
         return err;
     }
 
@@ -153,6 +155,7 @@ static int _reg_write(const struct device *dev, uint8_t reg, uint8_t val) {
     err = spi_write_dt(&config->bus, &tx);
     if (err) {
         LOG_ERR("Reg write failed on SPI write");
+        spi_cs_ctrl(dev, false);
         return err;
     }
 
@@ -212,6 +215,7 @@ static int motion_burst_read(const struct device *dev, uint8_t *buf, size_t burs
     err = spi_write_dt(&config->bus, &tx);
     if (err) {
         LOG_ERR("Motion burst failed on SPI write");
+        spi_cs_ctrl(dev, false);
         return err;
     }
 
@@ -226,6 +230,7 @@ static int motion_burst_read(const struct device *dev, uint8_t *buf, size_t burs
     err = spi_read_dt(&config->bus, &rx);
     if (err) {
         LOG_ERR("Motion burst failed on SPI read");
+        spi_cs_ctrl(dev, false);
         return err;
     }
 
@@ -617,6 +622,21 @@ static int pmw3610_report_data(const struct device *dev) {
         return err;
     }
 
+    if (buf[0] == 0xFF) {
+        data->error_count++;
+        if (data->error_count >= 5) {
+            LOG_WRN("PMW3610 SPI desync detected (buf[0]=0xFF), re-initializing sensor");
+            data->ready = false;
+            data->async_init_step = ASYNC_INIT_STEP_POWER_UP;
+            data->sw_smart_flag = false;
+            data->curr_cpi = 0;
+            data->error_count = 0;
+            k_work_schedule(&data->init_work, K_MSEC(async_init_delay[ASYNC_INIT_STEP_POWER_UP]));
+        }
+        return -EIO;
+    }
+    data->error_count = 0;
+
     int16_t raw_x =
         TOINT16((buf[PMW3610_X_L_POS] + ((buf[PMW3610_XY_H_POS] & 0xF0) << 4)), 12) / dividor;
     int16_t raw_y =
@@ -816,7 +836,9 @@ static void pmw3610_work_callback(struct k_work *work) {
     const struct device *dev = data->dev;
 
     pmw3610_report_data(dev);
-    set_interrupt(dev, true);
+    if (data->ready) {
+        set_interrupt(dev, true);
+    }
 }
 
 static int pmw3610_init_irq(const struct device *dev) {

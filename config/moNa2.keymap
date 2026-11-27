@@ -702,11 +702,11 @@
 &pointer_accel {
     input-type = <2>;
     track-remainders;
-    min-factor = <300>;
-    max-factor = <3100>;
+    min-factor = <220>;
+    max-factor = <2900>;
     speed-threshold = <420>;
-    speed-max = <2200>;
-    acceleration-exponent = <2>;
+    speed-max = <2500>;
+    acceleration-exponent = <1>;
 };
 
 &trackball_listener {
