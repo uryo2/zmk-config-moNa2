@@ -90,111 +90,164 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
+    runtime_combo_defaults {
+        compatible = "cormoran,runtime-combo-defaults";
+
+        dya_alt_gui_k {
+            slot = <0>;
+            display-name = "Alt+Win+K";
+            bindings = <&kp LA(LG(K))>;
+            key-positions = <26 38>;
+        };
+
+        dya_excl_qmark {
+            slot = <1>;
+            display-name = "! / ?";
+            bindings = <&mt JP_EXCL QUESTION>;
+            key-positions = <31 32>;
+            slow-release;
+        };
 
         tab {
+            slot = <2>;
+            display-name = "Tab";
             bindings = <&kp TAB>;
             key-positions = <0 1>;
         };
 
         double_quotation {
+            slot = <3>;
+            display-name = "Double Quote";
             bindings = <&kp JP_DQT>;
             key-positions = <19 20>;
         };
 
         zero1 {
+            slot = <4>;
+            display-name = "KP 0 (row2)";
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <29 30 31>;
             layers = <9 10>;
         };
 
         mb3 {
+            slot = <5>;
+            display-name = "MB3";
             bindings = <&mkp MB3>;
             key-positions = <17 18 19>;
             layers = <4>;
         };
 
         mb5 {
+            slot = <6>;
+            display-name = "MB5";
             bindings = <&mkp MB5>;
             key-positions = <6 7>;
             layers = <4>;
         };
 
         mb4 {
+            slot = <7>;
+            display-name = "MB4";
             bindings = <&mkp MB4>;
             key-positions = <29 30>;
             layers = <4>;
         };
 
         zero2 {
+            slot = <8>;
+            display-name = "KP 0 (row1)";
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <17 18 19>;
             layers = <9 10>;
         };
 
         zero3 {
+            slot = <9>;
+            display-name = "KP 0 (row0)";
             bindings = <&kp KP_NUMBER_0>;
             key-positions = <6 7 8>;
             layers = <9 10>;
         };
 
         bootloader {
+            slot = <10>;
+            display-name = "Bootloader";
             bindings = <&bootloader>;
             key-positions = <26 27>;
         };
 
         ctrlAltTAB {
+            slot = <11>;
+            display-name = "Ctrl+Alt+Tab";
             bindings = <&kp LA(LC(TAB))>;
-            key-positions = <19 18 17 20>;
+            key-positions = <17 18 19 20>;
         };
 
         max {
+            slot = <12>;
+            display-name = "Win Maximize";
             bindings = <&kp LG(UP_ARROW)>;
             key-positions = <6 7 8>;
         };
 
         minimum {
+            slot = <13>;
+            display-name = "Win Minimize";
             bindings = <&kp LG(DOWN)>;
             key-positions = <29 30 31>;
         };
 
         colon {
+            slot = <14>;
+            display-name = "Colon";
             bindings = <&kp JP_COLON>;
-            key-positions = <30 29>;
+            key-positions = <29 30>;
         };
 
         exclmtn {
+            slot = <15>;
+            display-name = "Exclamation";
             bindings = <&kp JP_EXCL>;
-            key-positions = <31 30>;
+            key-positions = <30 31>;
             timeout-ms = <75>;
             slow-release;
         };
 
         mb2 {
+            slot = <16>;
+            display-name = "MB2";
             bindings = <&mkp MB2>;
             key-positions = <17 18>;
             layers = <4>;
         };
 
         kakko {
+            slot = <17>;
+            display-name = "Parenthesis";
             bindings = <&parenthesisdoulequote 0 0>;
-            key-positions = <19 18>;
+            key-positions = <18 19>;
         };
 
         closewin {
+            slot = <18>;
+            display-name = "Close Win";
             bindings = <&kp LA(F4)>;
-            key-positions = <31 30 29 40>;
+            key-positions = <29 30 31 40>;
         };
 
         reload {
+            slot = <19>;
+            display-name = "Reload 1";
             bindings = <&kp F5>;
-            key-positions = <40 6 7 8>;
+            key-positions = <6 7 8 40>;
         };
 
         reload2 {
+            slot = <20>;
+            display-name = "Reload 2";
             bindings = <&kp F5>;
-            key-positions = <40 17 18 19>;
+            key-positions = <17 18 19 40>;
         };
     };
 
@@ -569,7 +622,7 @@
             display-name = "Default";
             bindings = <
 &mt ESCAPE Q                   &kp W                     &kp E         &kp R        &kp T                                                                &kp Y        &kp U  &kp I             &kp O            &mt JP_MINUS P
-&hold_pref_shift LEFT_SHIFT A  &hold_pref_shift LC(S) S  &kp D         &lt 7 F      &kp G                                                 &kp F5         &kp H        &kp J  &kp K             &lt 5 L          &lt 1 JP_COLON
+&hold_pref_shift LEFT_SHIFT A  &hold_pref_shift LC(S) S  &kp D         &lt 7 F      &kp G                                                 &mt PRINTSCREEN F5  &kp H        &kp J  &kp K             &lt 5 L          &lt 1 JP_COLON
 &hold_pref_shift LEFT_SHIFT Z  &mt LC(X) X               &mt LC(C) C   &mt LC(V) V  &kp B                   &lt 6 ESCAPE                  &lt 6 ESC      &kp N        &kp M  &mt JP_SQT COMMA  &mt JP_SEMI DOT  &hold_pref_shift RIGHT_SHIFT SLASH
 &mo 11                         &kp LEFT_COMMAND          &kp LEFT_ALT  &lt 9 GRAVE  &mt LEFT_CONTROL SPACE  &mt_exit_AML_on_tap LEFT_SHIFT INT_HENKAN    &kp BACKSPACE  &lt 8 ENTER                                            &mo 7
             >;
@@ -690,8 +743,8 @@
             bindings = <
 &kp F12  &kp F7  &kp F8  &kp F9  &trans                                &kp JP_CARET  &kp JP_AMPRS  &kp JP_LBRC  &kp JP_RBRC  &kp JP_HASH
 &kp F11  &kp F4  &kp F5  &kp F6  &trans                  &kp JP_BSLH   &kp JP_DLLR   &kp JP_AT     &kp JP_LPAR  &kp JP_RPAR  &kp QUESTION
-&kp F10  &kp F1  &kp F2  &kp F3  &trans  &kp C_VOL_DN    &kp JP_PIPE   &kp JP_UNDER  &kp JP_MINUS  &kp JP_LCBR  &kp JP_RCBR  &kp JP_EXCL
-&trans   &trans  &trans  &trans  &trans  &trans          &trans        &trans                                                &trans
+&kp F10  &kp F1  &kp F2  &kp F3  &trans  &kp C_VOL_UP    &kp JP_PIPE   &kp JP_UNDER  &kp JP_MINUS  &kp JP_LCBR  &kp JP_RCBR  &kp JP_EXCL
+&trans   &trans  &trans  &trans  &kp C_MUTE  &kp C_VOL_DN  &trans      &trans                                                &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
