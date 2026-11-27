@@ -108,58 +108,58 @@
             slow-release;
         };
 
-        tab {
+        exclmtn {
             slot = <2>;
-            display-name = "Tab";
-            bindings = <&kp TAB>;
-            key-positions = <0 1>;
+            display-name = "Exclamation";
+            bindings = <&kp JP_EXCL>;
+            key-positions = <30 31>;
+            timeout-ms = <75>;
+            slow-release;
         };
 
-        double_quotation {
+        colon {
             slot = <3>;
-            display-name = "Double Quote";
-            bindings = <&kp JP_DQT>;
-            key-positions = <19 20>;
-        };
-
-        zero1 {
-            slot = <4>;
-            display-name = "KP 0 (row2)";
-            bindings = <&kp KP_NUMBER_0>;
-            key-positions = <29 30 31>;
-            layers = <9 10>;
-        };
-
-        mb3 {
-            slot = <5>;
-            display-name = "MB3";
-            bindings = <&mkp MB3>;
-            key-positions = <17 18 19>;
-            layers = <4>;
-        };
-
-        mb5 {
-            slot = <6>;
-            display-name = "MB5";
-            bindings = <&mkp MB5>;
-            key-positions = <6 7>;
-            layers = <4>;
+            display-name = "Colon";
+            bindings = <&kp JP_COLON>;
+            key-positions = <29 30>;
         };
 
         mb4 {
-            slot = <7>;
+            slot = <4>;
             display-name = "MB4";
             bindings = <&mkp MB4>;
             key-positions = <29 30>;
             layers = <4>;
         };
 
-        zero2 {
-            slot = <8>;
-            display-name = "KP 0 (row1)";
+        zero1 {
+            slot = <5>;
+            display-name = "KP 0 (row2)";
             bindings = <&kp KP_NUMBER_0>;
-            key-positions = <17 18 19>;
+            key-positions = <29 30 31>;
             layers = <9 10>;
+        };
+
+        minimum {
+            slot = <6>;
+            display-name = "Win Minimize";
+            bindings = <&kp LG(DOWN)>;
+            key-positions = <29 30 31>;
+        };
+
+        closewin {
+            slot = <7>;
+            display-name = "Close Win";
+            bindings = <&kp LA(F4)>;
+            key-positions = <29 30 31 40>;
+        };
+
+        mb5 {
+            slot = <8>;
+            display-name = "MB5";
+            bindings = <&mkp MB5>;
+            key-positions = <6 7>;
+            layers = <4>;
         };
 
         zero3 {
@@ -170,82 +170,70 @@
             layers = <9 10>;
         };
 
-        bootloader {
-            slot = <10>;
-            display-name = "Bootloader";
-            bindings = <&bootloader>;
-            key-positions = <26 27>;
-        };
-
-        ctrlAltTAB {
-            slot = <11>;
-            display-name = "Ctrl+Alt+Tab";
-            bindings = <&kp LA(LC(TAB))>;
-            key-positions = <17 18 19 20>;
-        };
-
         max {
-            slot = <12>;
+            slot = <10>;
             display-name = "Win Maximize";
             bindings = <&kp LG(UP_ARROW)>;
             key-positions = <6 7 8>;
         };
 
-        minimum {
-            slot = <13>;
-            display-name = "Win Minimize";
-            bindings = <&kp LG(DOWN)>;
-            key-positions = <29 30 31>;
+        reload {
+            slot = <11>;
+            display-name = "Reload 1";
+            bindings = <&kp F5>;
+            key-positions = <6 7 8 40>;
         };
 
-        colon {
-            slot = <14>;
-            display-name = "Colon";
-            bindings = <&kp JP_COLON>;
-            key-positions = <29 30>;
+        bootloader {
+            slot = <12>;
+            display-name = "Bootloader";
+            bindings = <&bootloader>;
+            key-positions = <26 27>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <0 1>;
         };
 
-        exclmtn {
-            slot = <15>;
-            display-name = "Exclamation";
-            bindings = <&kp JP_EXCL>;
-            key-positions = <30 31>;
-            timeout-ms = <75>;
-            slow-release;
+        double_quotation {
+            bindings = <&kp JP_DQT>;
+            key-positions = <19 20>;
+        };
+
+        mb3 {
+            bindings = <&mkp MB3>;
+            key-positions = <17 18 19>;
+            layers = <4>;
+        };
+
+        zero2 {
+            bindings = <&kp KP_NUMBER_0>;
+            key-positions = <17 18 19>;
+            layers = <9 10>;
+        };
+
+        ctrlAltTAB {
+            bindings = <&kp LA(LC(TAB))>;
+            key-positions = <17 18 19 20>;
         };
 
         mb2 {
-            slot = <16>;
-            display-name = "MB2";
             bindings = <&mkp MB2>;
             key-positions = <17 18>;
             layers = <4>;
         };
 
         kakko {
-            slot = <17>;
-            display-name = "Parenthesis";
             bindings = <&parenthesisdoulequote 0 0>;
             key-positions = <18 19>;
         };
 
-        closewin {
-            slot = <18>;
-            display-name = "Close Win";
-            bindings = <&kp LA(F4)>;
-            key-positions = <29 30 31 40>;
-        };
-
-        reload {
-            slot = <19>;
-            display-name = "Reload 1";
-            bindings = <&kp F5>;
-            key-positions = <6 7 8 40>;
-        };
-
         reload2 {
-            slot = <20>;
-            display-name = "Reload 2";
             bindings = <&kp F5>;
             key-positions = <17 18 19 40>;
         };
